@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - NuGet restore failure in CI due to incorrect package version (`1.0.0` → `0.1.0-preview.1`)
 
-## [0.1.0-preview.1] - 2025-07-23
+## [0.1.0-preview.1] - 2026-07-23
 
 ### Added
 - Initial release of JustyBase.Netezza library
