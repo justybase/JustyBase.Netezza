@@ -7,19 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-- GitHub Actions CI workflow with cross-platform testing (Ubuntu + Windows)
-- GitHub Actions build & publish workflow with NuGet OIDC trusted publishing
-- Comprehensive `.gitignore` based on official github/gitignore templates (VisualStudio + JetBrains)
-
-### Changed
-- `RepositoryUrl` updated to `https://github.com/justybase/JustyBase.Netezza`
-- `JustyBaseNetezzaSqlVersion` default changed from `1.0.0` to `0.1.0-preview.1` to match NuGet package availability
-- CI workflows explicitly set `UseLocalJustyBaseLibraries=false` to always use NuGet packages
-- Updated action versions: `actions/checkout@v7`, `actions/setup-dotnet@v6`, `actions/upload-artifact@v7`
-
-### Fixed
-- NuGet restore failure in CI due to incorrect package version (`1.0.0` → `0.1.0-preview.1`)
+_No unreleased changes._
 
 ## [0.1.0-preview.1] - 2026-07-23
 
@@ -34,7 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Full XML documentation for all public types and members
 - Native AOT compatibility (`IsAotCompatible = true`)
 - Unit tests for all core functionality
-- CI/CD pipeline with GitHub Actions
+- GitHub Actions CI workflow with cross-platform testing (Ubuntu + Windows)
+- GitHub Actions build & publish workflow with NuGet OIDC trusted publishing
+- Comprehensive `.gitignore` based on official github/gitignore templates (VisualStudio + JetBrains)
 
 ### Dependencies
 - `JustyBase.NetezzaSqlParser` — SQL lexer, parser, AST, completion engine, linter
@@ -43,6 +33,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Target Framework
 - .NET 10
+
+### Notes
+- `RepositoryUrl`: `https://github.com/justybase/JustyBase.Netezza`
+- CI workflows use `UseLocalJustyBaseLibraries=false` to always consume NuGet packages
+- Default dependency version: `JustyBaseNetezzaSqlVersion=0.1.0-preview.1`
 
 ---
 
