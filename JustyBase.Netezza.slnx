@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="JustyBase.Netezza.csproj" />
+  <Project Path="tests/JustyBase.Netezza.Tests.csproj" />
+</Solution>
