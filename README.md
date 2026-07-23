@@ -1,10 +1,10 @@
 # JustyBase.Netezza
 
-[![CI](https://github.com/KrzysztofDusko/JustyBase.Netezza/actions/workflows/ci.yml/badge.svg)](https://github.com/KrzysztofDusko/JustyBase.Netezza/actions/workflows/ci.yml)
+[![CI](https://github.com/justybase/JustyBase.Netezza/actions/workflows/ci.yml/badge.svg)](https://github.com/justybase/JustyBase.Netezza/actions/workflows/ci.yml)
 [![NuGet](https://img.shields.io/nuget/v/JustyBase.Netezza)](https://www.nuget.org/packages/JustyBase.Netezza/)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 
-Integration layer between Netezza metadata, the [JustyBase.NetezzaSqlParser](https://github.com/KrzysztofDusko/JustyBase.NetezzaSql) (SQL parsing, completion, linting), and [JustyBase.NetezzaDdl](https://github.com/KrzysztofDusko/JustyBase.NetezzaSql) (DDL generation).
+Integration layer between Netezza metadata, the [JustyBase.NetezzaSqlParser](https://github.com/justybase/JustyBase.NetezzaSql) (SQL parsing, completion, linting), and [JustyBase.NetezzaDdl](https://github.com/justybase/JustyBase.NetezzaSql) (DDL generation).
 
 Use this package when you need to:
 
@@ -131,4 +131,4 @@ dotnet test .\JustyBase.Netezza.slnx -c Release
 
 When `JustyBase.NetezzaSql` is checked out as a sibling directory, local project references are used automatically. Set `UseLocalJustyBaseLibraries=false` to consume the versioned NuGet packages instead.
 
-See [the manual release guide](docs/release.md). Packages are never published by CI.
+See [the release guide](docs/release.md) for how releases are published automatically via GitHub Actions.
