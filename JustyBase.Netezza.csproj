@@ -12,12 +12,12 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>netezza;metadata;schema;ddl;justybase</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/KrzysztofDusko/JustyBase.Netezza</RepositoryUrl>
+    <RepositoryUrl>https://github.com/justybase/JustyBase.Netezza</RepositoryUrl>
     <UseLocalJustyBaseLibraries Condition="'$(UseLocalJustyBaseLibraries)' == ''
       and Exists('..\JustyBase.NetezzaSql\JustyBase.NetezzaSqlParser.csproj')
       and Exists('..\JustyBase.NetezzaSql\JustyBase.NetezzaDdl\JustyBase.NetezzaDdl.csproj')">true</UseLocalJustyBaseLibraries>
     <UseLocalJustyBaseLibraries Condition="'$(UseLocalJustyBaseLibraries)' == ''">false</UseLocalJustyBaseLibraries>
-    <JustyBaseNetezzaSqlVersion Condition="'$(JustyBaseNetezzaSqlVersion)' == ''">1.0.0</JustyBaseNetezzaSqlVersion>
+    <JustyBaseNetezzaSqlVersion Condition="'$(JustyBaseNetezzaSqlVersion)' == ''">0.1.0-preview.1</JustyBaseNetezzaSqlVersion>
   </PropertyGroup>
 
   <ItemGroup>
