@@ -9,6 +9,6 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageVersion Condition="'$(PackageVersion)' == ''">0.1.0-preview.1</PackageVersion>
+    <PackageVersion Condition="'$(PackageVersion)' == ''">0.2.0-preview.4</PackageVersion>
   </PropertyGroup>
 </Project>

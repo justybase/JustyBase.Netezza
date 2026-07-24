@@ -33,19 +33,31 @@ internal sealed class DefaultNetezzaSchemaProviderAdapter : INetezzaSchemaProvid
             provider.Clear();
 
         foreach (var table in snapshot.Tables)
-        {
-            var columns = table.Columns?.Select(column => new ColumnInfo(
-                column.Name,
-                DataType: column.DataType)).ToArray() ?? [];
+            AddTable(provider, table);
 
-            provider.AddTable(new TableInfo(
-                table.Name,
-                table.Schema,
-                table.Database,
-                Columns: columns,
-                IsView: table.IsView));
+        if (snapshot.ExternalTables is { Count: > 0 } externals)
+        {
+            foreach (var table in externals)
+                AddTable(provider, table);
         }
 
+        // Procedures are carried on the snapshot for host CALL UX; InMemorySchemaProvider
+        // is table/column oriented, so they are not projected into table metadata.
+
         provider.BumpMetadataEpoch();
+    }
+
+    private static void AddTable(InMemorySchemaProvider provider, NetezzaSchemaTable table)
+    {
+        var columns = table.Columns?.Select(column => new ColumnInfo(
+            column.Name,
+            DataType: column.DataType)).ToArray() ?? [];
+
+        provider.AddTable(new TableInfo(
+            table.Name,
+            table.Schema,
+            table.Database,
+            Columns: columns,
+            IsView: table.IsView));
     }
 }

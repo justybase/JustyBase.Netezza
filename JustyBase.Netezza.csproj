@@ -17,7 +17,7 @@
       and Exists('..\JustyBase.NetezzaSql\JustyBase.NetezzaSqlParser.csproj')
       and Exists('..\JustyBase.NetezzaSql\JustyBase.NetezzaDdl\JustyBase.NetezzaDdl.csproj')">true</UseLocalJustyBaseLibraries>
     <UseLocalJustyBaseLibraries Condition="'$(UseLocalJustyBaseLibraries)' == ''">false</UseLocalJustyBaseLibraries>
-    <JustyBaseNetezzaSqlVersion Condition="'$(JustyBaseNetezzaSqlVersion)' == ''">0.1.0-preview.1</JustyBaseNetezzaSqlVersion>
+    <JustyBaseNetezzaSqlVersion Condition="'$(JustyBaseNetezzaSqlVersion)' == ''">0.2.0-preview.4</JustyBaseNetezzaSqlVersion>
   </PropertyGroup>
 
   <ItemGroup>

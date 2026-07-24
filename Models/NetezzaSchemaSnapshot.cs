@@ -6,9 +6,13 @@ namespace JustyBase.Netezza.Models;
 /// </summary>
 /// <param name="Tables">The list of tables and views in the snapshot.</param>
 /// <param name="Version">Monotonically increasing version number for cache invalidation.</param>
+/// <param name="Procedures">Optional procedure definitions for hosts that surface CALL completion.</param>
+/// <param name="ExternalTables">Optional external tables (also applied into the schema provider as tables).</param>
 public sealed record NetezzaSchemaSnapshot(
     IReadOnlyList<NetezzaSchemaTable> Tables,
-    long Version = 0)
+    long Version = 0,
+    IReadOnlyList<NetezzaProcedureDefinition>? Procedures = null,
+    IReadOnlyList<NetezzaSchemaTable>? ExternalTables = null)
 {
     /// <summary>A static empty snapshot singleton.</summary>
     public static NetezzaSchemaSnapshot Empty { get; } = new([], 0);
