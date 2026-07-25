@@ -61,12 +61,7 @@ internal sealed class DefaultNetezzaDdlInputFactory : INetezzaDdlInputFactory
     {
         ArgumentNullException.ThrowIfNull(table);
 
-        var columns = table.Columns?.Select(column => new NetezzaColumnDdl(
-            column.Name,
-            column.DataType ?? "VARCHAR(ANY)",
-            column.Description,
-            column.DefaultValue,
-            !column.Nullable)).ToArray() ?? [];
+        var columns = table.Columns?.Select(NetezzaColumnCatalogMapper.ToColumnDdl).ToArray() ?? [];
 
         return new NetezzaTableDdlInput(
             table.Database ?? string.Empty,
@@ -90,12 +85,7 @@ internal sealed class DefaultNetezzaDdlInputFactory : INetezzaDdlInputFactory
         ArgumentNullException.ThrowIfNull(table);
         ArgumentNullException.ThrowIfNull(options);
 
-        var columns = table.Columns?.Select(column => new NetezzaColumnDdl(
-            column.Name,
-            column.DataType ?? "VARCHAR(ANY)",
-            column.Description,
-            column.DefaultValue,
-            !column.Nullable)).ToArray() ?? [];
+        var columns = table.Columns?.Select(NetezzaColumnCatalogMapper.ToColumnDdl).ToArray() ?? [];
 
         return new NetezzaExternalDdlInput(
             table.Database ?? string.Empty,

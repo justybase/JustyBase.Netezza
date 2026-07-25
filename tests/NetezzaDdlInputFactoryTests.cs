@@ -56,6 +56,24 @@ public sealed class NetezzaDdlInputFactoryTests
     }
 
     [Fact]
+    public void BuildTable_StripsEmbeddedNotNullFromDataType()
+    {
+        var input = NetezzaDdlInputFactory.BuildTable(
+            new NetezzaSchemaTable(
+                "T",
+                Columns:
+                [
+                    new NetezzaSchemaColumn("ID", "INTEGER NOT NULL", Nullable: false),
+                    new NetezzaSchemaColumn("NAME", "VARCHAR(10) NOT NULL", Nullable: true)
+                ]));
+
+        Assert.Equal("INTEGER", input.Columns[0].FullTypeName);
+        Assert.True(input.Columns[0].NotNull);
+        Assert.Equal("VARCHAR(10)", input.Columns[1].FullTypeName);
+        Assert.False(input.Columns[1].NotNull);
+    }
+
+    [Fact]
     public void BuildExternal_RejectsNullOptions()
     {
         var table = new NetezzaSchemaTable("EXT_DATA");
